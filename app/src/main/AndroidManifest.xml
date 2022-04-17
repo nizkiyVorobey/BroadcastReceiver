@@ -17,19 +17,22 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-<!--        Ми можемо вказати receiver тут, а не в коді. Майже не прцює на API > 26.
-            Тим не менш, ті receiver які відловляться тут бужуть працювати і пілся перезапуску телефона і коли
-            апка викнена
--->
-<!--        <receiver android:name=".MyReceiver"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.BATTERY_LOW"/>-->
-<!--                <action android:name="android.intent.action.AIRPLANE_MODE" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
+        <service android:name=".MyService" />
+
+        <!--        Ми можемо вказати receiver тут, а не в коді. Майже не прцює на API > 26.
+                    Тим не менш, ті receiver які відловляться тут бужуть працювати і пілся перезапуску телефона і коли
+                    апка викнена
+        -->
+        <!--        <receiver android:name=".MyReceiver"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.BATTERY_LOW"/>-->
+        <!--                <action android:name="android.intent.action.AIRPLANE_MODE" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
     </application>
 
 </manifest>
