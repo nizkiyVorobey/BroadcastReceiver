@@ -8,6 +8,11 @@ import android.widget.Toast
 class MyReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         when (intent?.action) {
+            ACTION_CLICKED -> {
+                val clickedCount = intent.getIntExtra(EXTRA_CLICKED_COUNT, 0)
+                Toast.makeText(context, "Clicked $clickedCount times", Toast.LENGTH_SHORT).show()
+            }
+
             Intent.ACTION_AIRPLANE_MODE_CHANGED -> {
                 val turnedOn = intent.getBooleanExtra("state", false)
                 Toast.makeText(
@@ -21,5 +26,10 @@ class MyReceiver : BroadcastReceiver() {
                 Toast.makeText(context, "Battery low", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    companion object {
+        const val ACTION_CLICKED = "clicked"
+        const val EXTRA_CLICKED_COUNT = "extra_clicked_count"
     }
 }
